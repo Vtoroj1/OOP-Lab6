@@ -13,9 +13,6 @@ class BattleVisitor {
     std::vector<DeathObserver*>& observers;
     
 public:
-    BattleVisitor(double r, 
-                  std::vector<std::unique_ptr<NPC>>& n, 
-                  std::vector<DeathObserver*>& obs);
-    
+    BattleVisitor(double r, std::vector<std::unique_ptr<NPC>>& n, std::vector<DeathObserver*>& obs);
     void visit(NPC& npc);
 };

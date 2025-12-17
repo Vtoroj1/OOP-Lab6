@@ -4,10 +4,7 @@
 #include "orc.h"
 #include "bear.h"
 
-BattleVisitor::BattleVisitor(double r, 
-                           std::vector<std::unique_ptr<NPC>>& n, 
-                           std::vector<DeathObserver*>& obs)
-    : range(r), npcs(n), observers(obs) {}
+BattleVisitor::BattleVisitor(double r, std::vector<std::unique_ptr<NPC>>& n, std::vector<DeathObserver*>& obs) : range(r), npcs(n), observers(obs) {}
 
 void BattleVisitor::visit(NPC& npc) {
     if (!npc.isAlive()) return;
@@ -27,8 +24,7 @@ void BattleVisitor::visit(NPC& npc) {
             if (npc.canDefeat(*target)) {
                 target->die();
                 for (auto obs : observers) {
-                    obs->onDeath(npc.getName() + " (" + npc.getType() + ")", 
-                                target->getName() + " (" + target->getType() + ")");
+                    obs->onDeath(npc.getName() + " (" + npc.getType() + ")", target->getName() + " (" + target->getType() + ")");
                 }
                 continue;
             } 
@@ -36,8 +32,7 @@ void BattleVisitor::visit(NPC& npc) {
             if (target->canDefeat(npc)) {
                 npc.die();
                 for (auto obs : observers) {
-                    obs->onDeath(target->getName() + " (" + target->getType() + ")", 
-                                npc.getName() + " (" + npc.getType() + ")");
+                    obs->onDeath(target->getName() + " (" + target->getType() + ")", npc.getName() + " (" + npc.getType() + ")");
                 }
                 break;
             }

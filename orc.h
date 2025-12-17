@@ -1,4 +1,5 @@
 #pragma once
+
 #include "npc.h"
 #include "visitor.h"
 

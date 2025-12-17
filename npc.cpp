@@ -1,8 +1,7 @@
 #include "npc.h"
 #include <cmath>
 
-NPC::NPC(const std::string& n, double xPos, double yPos) 
-    : name(n), x(xPos), y(yPos) {}
+NPC::NPC(const std::string& n, double xPos, double yPos) : name(n), x(xPos), y(yPos) {}
 
 std::string NPC::getName() const {
     return name;

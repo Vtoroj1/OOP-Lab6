@@ -11,10 +11,7 @@
 
 class NPCFactory {
 public:
-    static std::unique_ptr<NPC> createNPC(const std::string& type, 
-                                         const std::string& name, 
-                                         double x, double y);
-    
+    static std::unique_ptr<NPC> createNPC(const std::string& type, const std::string& name, double x, double y);
     static std::unique_ptr<NPC> loadFromString(const std::string& data);
 };
 

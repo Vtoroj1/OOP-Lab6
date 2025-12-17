@@ -23,8 +23,7 @@ void Dungeon::printNPCs() const {
         if (npc->isAlive()) aliveCount++;
     }
     
-    std::cout << "=== Список NPC (всего: " << npcs.size() 
-              << ", живых: " << aliveCount << ") ===" << std::endl;
+    std::cout << "Список NPC (всего: " << npcs.size() << ", живых: " << aliveCount << ")" << std::endl;
     
     for (size_t i = 0; i < npcs.size(); i++) {
         const auto& npc = npcs[i];
@@ -113,11 +112,7 @@ void Dungeon::battle(double range) {
     }
     
     size_t before = npcs.size();
-    npcs.erase(std::remove_if(npcs.begin(), npcs.end(),
-                              [](const std::unique_ptr<NPC>& n) { 
-                                  return !n->isAlive(); 
-                              }),
-               npcs.end());
+    npcs.erase(std::remove_if(npcs.begin(), npcs.end(), [](const std::unique_ptr<NPC>& n) { return !n->isAlive(); }), npcs.end());
     
     size_t killed = before - npcs.size();
     std::cout << "Битва окончена. Убито: " << killed << " NPC." << std::endl;

@@ -1,12 +1,9 @@
 #include "factory.h"
 #include <iostream>
 
-std::unique_ptr<NPC> NPCFactory::createNPC(const std::string& type, 
-                                          const std::string& name, 
-                                          double x, double y) {
+std::unique_ptr<NPC> NPCFactory::createNPC(const std::string& type, const std::string& name, double x, double y) {
     if (x <= 0 || x >= 500 || y <= 0 || y >= 500) {
-        std::cerr << "Ошибка создания NPC: некорректные координаты " 
-                  << x << ", " << y << " для " << name << std::endl;
+        std::cerr << "Ошибка создания NPC: некорректные координаты " << x << ", " << y << " для " << name << std::endl;
         return nullptr;
     }
     

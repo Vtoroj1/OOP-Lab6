@@ -2,8 +2,7 @@
 #include "orc.h"
 #include "bear.h"
 
-Knight::Knight(const std::string& n, double xPos, double yPos) 
-    : NPC(n, xPos, yPos), alive(true) {}
+Knight::Knight(const std::string& n, double xPos, double yPos) : NPC(n, xPos, yPos), alive(true) {}
 
 std::string Knight::getType() const {
     return "Knight";
