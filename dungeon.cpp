@@ -32,7 +32,7 @@ void Dungeon::printNPCs() const {
                   << npc->getName() << " "
                   << "(" << npc->getX() 
                   << ", " << npc->getY() << ") "
-                  << (npc->isAlive() ? "✓ ЖИВ" : "✗ МЁРТВ") << std::endl;
+                  << (npc->isAlive() ? "ЖИВ" : "МЁРТВ") << std::endl;
     }
 }
 
